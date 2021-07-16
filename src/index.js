@@ -29,7 +29,7 @@ function checksCreateTodosUserAvailability(request, response, next) {
   if (user.pro == false && user.todos.length <= 10) {
     return next()
   }
-  
+
   if (user.pro == true) {
     return next()
   }
@@ -41,7 +41,7 @@ function checksTodoExists(request, response, next) {
   const { username } = request.headers
   const { id } = request.params 
 
-  const userAlreadyExists = users.some( (users) => users.username === username)
+  const userAlreadyExists = users.find( (users) => users.username === username)
   
 
   if (!userAlreadyExists) {
