@@ -47,7 +47,7 @@ function checksTodoExists(request, response, next) {
   if (!userAlreadyExists) {
     return response.status(404).json({error: 'User Not Found'})
   }
-
+ 
   if (!validate(id)) {
     return response.status(400).json({error: 'ID is Not a valid UUID'})
   }
